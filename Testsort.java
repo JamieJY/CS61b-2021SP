@@ -10,15 +10,17 @@ public class Testsort {
 		
 		Sort.sort(input);
 		
-		for(int i=0;i<input.length;i++) {
-			if(!input[i].equals(expected[i])) {
-			    System.out.println("mismatch in position"+i+",expected:"+expected[i]+",but got:"+input[i]);
-			    return;
-			}
-		}
-		if(!java.util.Arrays.equals(input,expected)) {
-			System.out.println("error!something is wrong with Sort.sort");
-		}
+		org.junit.Assert.assertEquals(expected,input);
+		
+//		for(int i=0;i<input.length;i++) {
+//			if(!input[i].equals(expected[i])) {
+//			    System.out.println("mismatch in position"+i+",expected:"+expected[i]+",but got:"+input[i]);
+//			    return;
+//			}
+//		}
+//		if(!java.util.Arrays.equals(input,expected)) {
+//			System.out.println("error!something is wrong with Sort.sort");
+//		}
 	}
 	
 	
