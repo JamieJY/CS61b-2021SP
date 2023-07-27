@@ -1,0 +1,18 @@
+
+	public class intlist {
+         public int first;
+	         public intlist rest;   
+	               
+	         public static void main(String[] args) {         
+	         intlist l = new intlist();         
+	         l.first = 5;
+	         l.rest = null;
+	         
+	         l.rest = new intlist();
+	         l.rest.first =10;
+	         
+	         l.rest.rest = new intlist();         
+           l.rest.rest.first = 15;
+	         
+   }
+	}
