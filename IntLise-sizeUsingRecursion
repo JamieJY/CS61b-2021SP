@@ -1,0 +1,21 @@
+	public class intlist {
+           public int first;
+	         public intlist rest;   
+	   
+           public intlist(int f,intlist r){
+            first = f;
+            rest = r;
+       }
+          public int size(){
+          if( rest == null)
+          { return 1; }
+         return 1+this.rest.size();
+}
+         
+	         public static void main(String[] args) {         
+	         intlist l = new intlist(15,null);
+           l = new intlist(10,l);
+           l = new intlist(5,l);
+          System.out.println(l.size());
+   }
+	}
