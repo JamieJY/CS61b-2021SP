@@ -1,0 +1,34 @@
+public class intlist {
+           public int first;
+	         public intlist rest;   
+	   
+           public intlist(int f,intlist r){
+            first = f;
+            rest = r;
+       }
+         public int iterativesize(){
+            intlist pointer = this;
+            int totalNumber = 0;
+           while(pointer != null){
+              totalNumber++;
+              pointer = pointer.rest;
+         } 
+         return totalNumber;
+         }
+      public int get(int i){
+         if(i == 0){
+            return first;
+         }
+         return this.rest.get(i-1);
+      
+      }
+	         public static void main(String[] args) {         
+	         intlist l = new intlist(15,null);
+           l = new intlist(10,l);
+           l = new intlist(5,l);
+          System.out.println(l.iterativesize());
+          System.out.println(l.get(0));
+          System.out.println(l.get(1));
+          System.out.println(l.get(2));
+   }
+	}
