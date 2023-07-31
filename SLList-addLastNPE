@@ -21,6 +21,8 @@ public class SLList {
     IntNode p = first;
       if(p.next == null){
       p.next = new IntNode(x,null);
+if the method attempts to access p.next when p is the last node (i.e., p.next is null), it will encounter a NullPointerException. 
+This exception occurs when a program tries to access an object or call a method on a null reference, resulting in a runtime error.
       }
       p.next.addLast(x);
    }
