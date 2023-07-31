@@ -24,7 +24,14 @@ public class SLList {
       }
       p.next.addLast(x);
    }
-
+/**  the correct addLast : */
+ public void addLast(int x) {
+       IntNode p = first;
+       while(p.next != null){
+          p = p.next;          
+       }
+       p.next = new IntNode(x,null);
+    }
   
     }
    public static void main(String[] args){
