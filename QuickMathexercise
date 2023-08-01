@@ -1,0 +1,54 @@
+public class QuikMaths {
+ public static void multiplyBy3(int[] A) {
+ for (int x: A) {
+ x = x * 3;
+ }
+ }
+
+ public static void multiplyBy2(int[] A) {
+ int[] B = A;
+ for (int i = 0; i < B.length; i+= 1) {
+ B[i] *= 2;
+ }
+ }
+
+ public static void swap(int A, int B ) {
+ int temp = B;
+ B = A;
+ A = temp;
+ }
+ public static void main(String[] args) {
+ int[] arr;
+ arr = new int[]{2, 3, 3, 4};
+ multiplyBy3(arr);
+System.out.println(" arr Array numbers:");
+        for (int i = 0; i < arr.length; i++) {
+           System.out.println(arr[i]);}
+ 
+
+ arr = new int[]{2, 3, 3, 4};
+ multiplyBy2(arr);
+System.out.println(" arr Array numbers:");
+        for (int i = 0; i < arr.length; i++) {
+           System.out.println(arr[i]);}
+ 
+
+ int a = 6;
+ int b = 7;
+ swap(a, b);
+
+
+System.out.println(" a and b :"+a+" "+b);
+ }
+ }
+output: arr Array numbers:
+2
+3
+3
+4
+ arr Array numbers:
+4
+6
+6
+8
+ a and b :6 7
