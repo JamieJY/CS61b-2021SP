@@ -1,0 +1,43 @@
+public class AList<Generic> {
+  private Generic[] items;    
+  private int size;
+ 
+  public AList() {
+    items =(Generic[]) new Object[100];  
+    size = 0;
+  }
+ 
+  public void addLast(Generic x) {
+    items[size] = x;
+    size += 1;
+  }
+ 
+  public Generic getLast() {
+    return items[size - 1];
+  }
+ 
+  public Generic get(int i) {
+    return items[i];
+  }
+
+  public int size() {
+    return size;
+  }
+  public Generic removeLast1() {
+     Generic x = getLast();
+//Java only destroys unwanted objects when the last reference has been lost.
+//Keeping references to unneeded objects is sometimes called loitering.
+//Save memory. Don’t loiter.
+
+     Generic[size-1] =null;
+     size -= 1;  	
+     return x;
+} 
+ private void resize(int cap) {
+    Generic[] a = (Generic[]) new Object[cap];
+    System.arraycopy(items, 0, 
+                     a, 0, size);
+    items = a;
+  }
+
+}
