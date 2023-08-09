@@ -1,0 +1,66 @@
+public class SLList {
+	private class IntNode{
+		public int item;
+		public IntNode next;
+		public IntNode(int item,IntNode next) {
+			this.item = item;
+			this.next = next;
+		}
+	}
+	private IntNode first;
+	
+	public void addFirst(int x) {
+		first = new IntNode(x,first);
+	}
+	
+	public void insert(int item,int position) {
+		if(position == 0 || first == null) {
+			addFirst(item);
+			return;
+		}
+		IntNode currentIntNode = first;
+		int currentPosition = 1;
+		while(currentIntNode.next != null && currentPosition < position) {
+		currentIntNode = currentIntNode.next;
+		currentPosition ++;
+	}
+				
+		IntNode newIntNode = new IntNode(item,currentIntNode.next);
+		currentIntNode.next = newIntNode;
+	}
+	public void reverse() {
+		if(first == null || first.next == null) {
+			return;
+		}
+		IntNode previous = null;
+		IntNode current = first;
+		IntNode next = null;
+		while(current != null) {
+			next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;
+		}
+		first = previous;
+	}
+	public void reverseRecursive() {
+		first = reverseRecursive(first,null);
+	}
+	private IntNode reverseRecursive(IntNode current,IntNode previous) {
+		if(current == null) {
+			return previous;
+		}
+		IntNode nextNode = current.next;
+		current.next = previous;
+		return reverseRecursive(nextNode,current);
+	}
+	public static void main(String[] args) {
+		SLList L = new SLList();
+		L.addFirst(2);
+		L.addFirst(6);
+		L.addFirst(5);
+		L.insert(10,1);
+		L.reverse();
+    L.reverseRecursive();
+	}
+}
