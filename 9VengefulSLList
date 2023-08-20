@@ -1,0 +1,19 @@
+/** VengefulSLList:remember all items that have been banished by removeLast */
+
+public class VengefulSLList<Item> extends SLList<Item>{
+
+SLList<Item> deletedItems;
+public void VengefulSLList(){
+  deletedItems = new SLList<Item>;
+}
+@Override
+public Item removeLast(){
+  Item x = super.removeLast();
+  deletedItems.addLast(x);
+  return x;
+}
+public void printDeletedItems(){
+      deletedItems.print();
+}
+
+}
