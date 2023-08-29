@@ -1,3 +1,5 @@
+package lecrute10;
+
 public class Dog implements OurComparable{
     private String name;
     private int size;
