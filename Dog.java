@@ -1,6 +1,5 @@
-package lecrute10;
-
-public class Dog implements OurComparable{
+import java.util.Comparator;
+public class Dog implements Comparable<Dog> {
     private String name;
     private int size;
 
@@ -13,8 +12,17 @@ public class Dog implements OurComparable{
         System.out.println(name + "says : bark");
     }
 
-    public int compareTo(Object o){
-        Dog uddaDog = (Dog) o;
-        return this.size-uddaDog.size;
+    public int compareTo(Dog uddaDog){
+         return this.size-uddaDog.size;
+    }
+
+    private static class NameComparator implements Comparator<Dog>{
+        public int compare(Dog a,Dog b) {
+            return a.name.compareTo(b.name);
+        }
+    }
+
+    public static Comparator<Dog> getNameComparator(){
+        return new NameComparator;
     }
 }
